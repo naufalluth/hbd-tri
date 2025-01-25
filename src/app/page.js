@@ -2,7 +2,9 @@
 
 import DraggableCard from "@/components/DraggableCard";
 import { IdentityForm } from "@/components/IdentityForm";
+import { HeroSection } from "@/components/HeroSection";
 import { useState, useEffect, useRef } from "react";
+import HappyBirthday from "@/components/HappyBirthday";
 
 export default function Home() {
   const [isVerified, setIsVerified] = useState(false);
@@ -17,8 +19,7 @@ export default function Home() {
         <IdentityForm onVerify={handleVerification} />
       ) : (
         <div>
-          <DraggableCard children />
-
+          <HappyBirthday />
         </div>
       )}
     </main>

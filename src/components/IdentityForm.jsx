@@ -1,6 +1,8 @@
 "use client"
 
 import { useState } from 'react';
+import toast from 'react-hot-toast';
+
 
 const IdentityForm = ({ onVerify }) => {
     const [name, setName] = useState('');
@@ -19,7 +21,7 @@ const IdentityForm = ({ onVerify }) => {
             setIsVerifiedState(true);
             onVerify(true);
         } else {
-            alert('Nama sama tanggal lahir kamu salah nih');
+            toast.error('Nama sama tanggal lahir kamu salah nih');
             onVerify(false);
         }
     }
@@ -27,7 +29,7 @@ const IdentityForm = ({ onVerify }) => {
     return (
         <>
             <div className='flex justify-center items-center h-screen'>
-                <div className="bg-pink-100 p-6 rounded-lg shadow-md w-96" >
+                <div className="bg-pink-100 p-6 rounded-xl shadow-md w-96" >
                     <div className='text-center text-pink-800'>
                         <h2 className='text-md font-bold'>Coba dicek dulu beneran kamu bukannn</h2>
                         <p className='text-md font-semibold'>diisi dulu yaaa</p>

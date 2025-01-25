@@ -5,11 +5,13 @@ import { motion } from 'framer-motion';
 
 export default function DraggableCard() {
     const cards = [
-        { id: '1', message: 'Happy Birthday to You! 🎉' },
-        { id: '2', message: 'Wishing you all the best! 🎂' },
-        { id: '3', message: 'Hope your day is as special as you are! 🎁' },
-        { id: '4', message: 'Selamat ulang tahun 🎊' },
-        { id: '5', message: 'Geser aku dong sayanggg 🌟' },
+        { id: '0', message: 'I 💗 U ' },
+        { id: '1', message: `Happy Birthday to You! 🎉` },
+        { id: '2', message: 'Semoga wajah kamu selalu dihiasi oleh senyum manis dan kebahagiaan ! 🥰' },
+        { id: '3', message: 'Selalu dilancarkan semua urusannya, selalu diberikan kesempatan untuk merasakan semua keindahan dunia ! 🎂' },
+        { id: '5', message: 'Semoga diumur yang ke 24 ini selalu diberikan kebahagiaan, dikabulkan semua keinginannya dan tercapai semua mimpi-mimpinyaaa 🎁' },
+        { id: '6', message: 'Selamat ulang tahun sayanggg! Panjang umur dan sehat selalu yaaaaa 🎊' },
+        { id: '7', message: 'Geser aku dong sayanggg 🌟' },
     ];
 
     const [positions, setPositions] = useState([]);
@@ -23,11 +25,6 @@ export default function DraggableCard() {
                 y: centerY,
             }))
         );
-
-        // Play the birthday song
-        const audio = new Audio('/song/happy-birthday.mp3');
-        audio.loop = true;
-        audio.play();
     }, []);
 
     const handleDrag = (index, event, info) => {
@@ -40,29 +37,29 @@ export default function DraggableCard() {
     };
 
     return (
+
         <div
             style={{
                 width: '100vw',
                 height: '100vh',
                 position: 'relative',
                 overflow: 'hidden',
-            }} className="flex flex-col justify-center items-center h-screen bg-[url('/bg.svg')] bg-pink-50 bg-cover bg-center w-full h-screen bg-no-repeat "
+            }} className="flex flex-col justify-center items-center h-screen bg-[url('/bg.svg')] bg-pink-50 bg-cover bg-center w-full bg-no-repeat " id='wish-card'
         >
             {
                 cards.map((card, index) => (
-                    <motion.div
+                    <motion.div className='px-4 py-1 w-72 h-36'
                         key={card.id}
                         drag
                         dragMomentum={false}
+                        whileDrag={{ scale: 1.1 }}
+                        whileTap={{ scale: 1.2 }}
                         onDrag={(event, info) => handleDrag(index, event, info)}
                         style={{
                             position: 'absolute',
-                            width: '250px',
-                            height: '150px',
                             backgroundColor: '#fff',
                             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                             borderRadius: '10px',
-                            padding: '20px',
                             textAlign: 'center',
                             fontSize: '16px',
                             fontWeight: 'bold',
