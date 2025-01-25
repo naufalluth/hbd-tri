@@ -2,6 +2,7 @@ import { HeroSection } from "./HeroSection"
 import DraggableCard from "./DraggableCard"
 import { useEffect } from "react"
 import { NavigationBar } from "./NavigationBar"
+import GalleryPhotos from "./GalleryPhotos"
 export default function HappyBirthday() {
 
     useEffect(() => {
@@ -14,6 +15,7 @@ export default function HappyBirthday() {
         <div className="flex flex-col justify-center items-center overflow-x-hidden relative">
             <NavigationBar />
             <HeroSection />
+            <GalleryPhotos />
             <DraggableCard />
         </div>
     )

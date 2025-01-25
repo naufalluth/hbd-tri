@@ -19,7 +19,7 @@ export const HeroSection = () => {
                             transition={{ duration: 1 }}
                             className="text-3xl"
                         >
-                            Selamat ulang tahun manusia paling cantik di dunia iniiiii💖💗💖
+                            Selamat ulang tahun manusia paling cantik di Dunia iniiiii💖💗💖
                         </motion.p>
                     </div>
                     <motion.div initial={{ x: 0 }} whileHover={{ x: 10 }} transition={{ duration: 0.3 }} className="w-full">
